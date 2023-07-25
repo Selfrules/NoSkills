@@ -44,8 +44,7 @@ const Brawls = () => {
       }));
 
       const players = {};
-      let globalTotalBattles = 0;
-      let globalTotalWins = 0;
+
 
       datasets.forEach(dataset => {
         dataset.data.forEach(row => {
@@ -61,9 +60,6 @@ const Brawls = () => {
           players[playerName].totalBattles += parseInt(row["Total Battles"]);
           players[playerName].wins += parseInt(row.Wins);
           players[playerName].losses += parseInt(row.Losses);
-
-          globalTotalBattles += parseInt(row["Total Battles"]);
-          globalTotalWins += parseInt(row.Wins);
         });
       });
 
